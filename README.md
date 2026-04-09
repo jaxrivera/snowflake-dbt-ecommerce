@@ -17,3 +17,10 @@ This project demonstrates a production-grade Modern Data Stack (MDS) pipeline. I
 ## 📈 Data Lineage
 (Run `dbt docs generate` to view the full graph)
 [Raw Azure Data] -> [stg_orders (View)] -> [fct_revenue (Table)]
+
+
+## 📖 Project Documentation
+For detailed guides on this project, please see the following:
+- [Implementation Notes](./docs/IMPLEMENTATION_NOTES.md) - *Interview Prep & Architecture Logic*
+- [Reproduction Guide](./docs/REPRODUCE.md) - *Setup & Execution Instructions*
+- [Troubleshooting Log](./docs/TROUBLESHOOTING.md) - *Resolved Errors & Blockers*
