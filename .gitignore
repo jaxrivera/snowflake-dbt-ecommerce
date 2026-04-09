@@ -1,4 +1,15 @@
-
+# dbt folders
 target/
+dbt_modules/
 dbt_packages/
 logs/
+
+# Environment / OS
+.env
+.DS_Store
+*.pyc
+__pycache__/
+dbt_env/
+
+# Credentials (CRITICAL)
+profiles.yml
