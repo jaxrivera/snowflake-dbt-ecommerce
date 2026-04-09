@@ -1,15 +1,19 @@
-Welcome to your new dbt project!
+# Cloud-Native Ecommerce ELT Pipeline
+### Snowflake | dbt Core | Azure Blob Storage | WSL2
 
-### Using the starter project
+## 🚀 Project Overview
+This project demonstrates a production-grade Modern Data Stack (MDS) pipeline. It automates the journey of ecommerce data from raw cloud storage to a refined "Gold" analytics layer, enabling business stakeholders to track Net Revenue after marketing overhead.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## 🏗 Architecture (Medallion)
+- **Bronze (Raw):** Ingested raw JSON/CSV data from Azure Blob Storage into Snowflake `PROJ_RAW`.
+- **Silver (Staging):** dbt views (`stg_orders`) used for data cleaning, type casting, and filtering.
+- **Gold (Marts):** Materialized tables (`fct_revenue`) applying business logic and KPI calculations.
 
+## 🛠 Key Features
+- **Security First:** Implemented Snowflake RBAC (Role-Based Access Control) using a dedicated `PROJ_DE_ROLE`.
+- **Modularity:** Utilized dbt `ref()` functions to build a DAG (Directed Acyclic Graph), ensuring data integrity.
+- **Scalability:** Integrated Azure Storage via Snowflake Storage Integrations for high-throughput data loading.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## 📈 Data Lineage
+(Run `dbt docs generate` to view the full graph)
+[Raw Azure Data] -> [stg_orders (View)] -> [fct_revenue (Table)]
